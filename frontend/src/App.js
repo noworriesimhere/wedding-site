@@ -7,7 +7,8 @@ import './css/App.css';
 import HomeScreen from './screens/HomeScreen';
 import RsvpScreen from './screens/RsvpScreen';
 import ZoomScreen from './screens/ZoomScreen';
-import CommentScreen from './screens/ZoomScreen';
+import CommentScreen from './screens/CommentScreen';
+import OurstoryScreen from './screens/OurstoryScreen';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
         <Hero />
         <Header />
         <Container>
-          <Route path='/zoom' component={ZoomScreen} />
+          <Route path='/our-story' component={OurstoryScreen} />
+          <Route path='/watch-live' component={ZoomScreen} />
           <Route path='/rsvp' component={RsvpScreen} />
           <Route path='/comments/:id' component={CommentScreen} />
           <Route path='/' component={HomeScreen} exact />

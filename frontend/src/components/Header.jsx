@@ -13,17 +13,19 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link>
-                <i className='fas fa-book px-2'></i>
-                Our Story
-              </Nav.Link>
+              <LinkContainer to='/our-story'>
+                <Nav.Link>
+                  <i className='fas fa-book px-2'></i>
+                  Our Story
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/rsvp'>
                 <Nav.Link>
                   <i className='fas fa-edit px-2'></i>
                   RSVP
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/zoom'>
+              <LinkContainer to='/watch-live'>
                 <Nav.Link>
                   <i className='fas fa-video px-2'></i>Watch Live
                 </Nav.Link>

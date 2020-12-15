@@ -10,7 +10,7 @@ const Comment = ({ comment }) => {
       </Link>
 
       <Card.Body>
-        <Link href={`/comments/${comment._id}`}>
+        <Link to={`/comments/${comment._id}`}>
           <Card.Title as='div'>
             <strong>{comment.name}</strong>
           </Card.Title>
