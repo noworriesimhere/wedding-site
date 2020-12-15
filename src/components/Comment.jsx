@@ -1,24 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 
 const Comment = ({ comment }) => {
   return (
-    <Card className='my-3 p-3 rounded'>
-      <a href={`/RSVP/${comment._id}`}>
+    <Card className='my-3 mx-1 p-3 rounded'>
+      <Link to={`/comments/${comment._id}`}>
         <Card.Img src={comment.image} variant='top' />
-      </a>
+      </Link>
 
       <Card.Body>
-        <a href={`/RSVP/${comment._id}`}>
+        <Link href={`/comments/${comment._id}`}>
           <Card.Title as='div'>
             <strong>{comment.name}</strong>
           </Card.Title>
-        </a>
+        </Link>
 
         <Card.Text as='div'>
-          <div className='my-3'>{comment.displayLocation}</div>
+          <div className='my-3'>{comment.location}</div>
         </Card.Text>
-        <Card.Text as='h3'>${comment.text}</Card.Text>
       </Card.Body>
     </Card>
   );

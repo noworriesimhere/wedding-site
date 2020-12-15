@@ -1,19 +1,29 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
 import './css/App.css';
+import HomeScreen from './screens/HomeScreen';
+import RsvpScreen from './screens/RsvpScreen';
+import ZoomScreen from './screens/ZoomScreen';
+import CommentScreen from './screens/ZoomScreen';
 
 function App() {
   return (
-    <>
-      <main className='py-3 vh-100 text-center d-flex flex-column justify-content-center'>
+    <Router>
+      <main className='py-3'>
+        <Hero />
+        <Header />
         <Container>
-          <h1 className='hero--title'>Our Wedding</h1>
+          <Route path='/zoom' component={ZoomScreen} />
+          <Route path='/rsvp' component={RsvpScreen} />
+          <Route path='/comments/:id' component={CommentScreen} />
+          <Route path='/' component={HomeScreen} exact />
         </Container>
       </main>
-      <Header />
       <Footer />
-    </>
+    </Router>
   );
 }
 

@@ -1,29 +1,33 @@
 import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import '../css/Header.css';
 
 const Header = () => {
   return (
-    <header>
+    <header className='sticky-top'>
       <Navbar bg='primary' variant='dark' expand='md' collapseOnSelect>
         <Container>
-          <Navbar.Brand href='/' className='navbar__brand'>
-            Georgia & Alan 2021
-          </Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand className='navbar__brand'>Wedding 2021</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link href='/aboutus'>
-                <i className='fas fa-book'></i>
+              <Nav.Link>
+                <i className='fas fa-book px-2'></i>
                 Our Story
               </Nav.Link>
-              <Nav.Link href='/rsvp'>
-                <i className='fas fa-edit'></i>
-                RSVP
-              </Nav.Link>
-              <Nav.Link href='/zoom'>
-                <i className='fas fa-video'></i>Watch Live
-              </Nav.Link>
+              <LinkContainer to='/rsvp'>
+                <Nav.Link>
+                  <i className='fas fa-edit px-2'></i>
+                  RSVP
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/zoom'>
+                <Nav.Link>
+                  <i className='fas fa-video px-2'></i>Watch Live
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
