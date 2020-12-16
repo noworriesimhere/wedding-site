@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import axios from 'axios';
 import Comment from '../components/Comment';
-import comments from '../comments';
 
 const RsvpScreen = () => {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const { data } = await axios.get('/api/comments');
+      setComments(data);
+    };
+    fetchComments();
+  }, []);
+
   return (
     <Container className='pt-5 rsvp__container'>
       <Row>

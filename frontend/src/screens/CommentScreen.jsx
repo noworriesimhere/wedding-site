@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Row, Col, Image } from 'react-bootstrap';
-import comments from '../comments';
+import axios from 'axios';
 
 const CommentScreen = ({ match }) => {
-  const comment = comments.find((c) => c._id === Number(match.params.id));
+  const [comment, setComment] = useState({});
+
+  useEffect(() => {
+    const fetchComment = async () => {
+      const { data } = await axios.get(`/api/comments/${match.params.id}`);
+      setComment(data);
+    };
+    fetchComment();
+  }, [match]);
+
+  // const comment = comments.find((c) => c._id === Number(match.params.id));
   return (
     <>
       <Row>
