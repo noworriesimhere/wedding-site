@@ -4,7 +4,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const Header = () => {
   return (
-    <header className='sticky-top'>
+    <header>
       <Navbar bg='primary' variant='dark' expand='md' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
@@ -13,16 +13,22 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
+              <LinkContainer to='/rsvp'>
+                <Nav.Link>
+                  <i className='fas fa-check px-2'></i>
+                  RSVP / Sign In
+                </Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/our-story'>
                 <Nav.Link>
                   <i className='fas fa-book px-2'></i>
                   Our Story
                 </Nav.Link>
               </LinkContainer>
-              <LinkContainer to='/rsvp'>
+              <LinkContainer to='/guestbook'>
                 <Nav.Link>
                   <i className='fas fa-edit px-2'></i>
-                  RSVP
+                  Guest Book
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to='/watch-live'>

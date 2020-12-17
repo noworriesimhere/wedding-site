@@ -3,8 +3,12 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Comment from '../components/Comment';
 
-const RsvpScreen = () => {
+const GuestbookScreen = () => {
   const [comments, setComments] = useState([]);
+  const [user, setUser] = useState('');
+  const [location, setLocation] = useState('');
+  const [image, setImage] = useState('');
+  const [text, setText] = useState('');
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -14,37 +18,45 @@ const RsvpScreen = () => {
     fetchComments();
   }, []);
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('submit!');
+  };
+
   return (
     <Container className='pt-5 rsvp__container'>
       <Row>
         <Col sm={12} md={4} className='pt-5'>
-          <Form className='sticky-top'>
+          <Form className='sticky-top' onSubmit={submitHandler}>
             <h2>Leave us a message!</h2>
-            <Form.Group controlId='formName'>
-              <Form.Label>Name</Form.Label>
-              <Form.Control type='text' placeholder='Who are you?' />
-            </Form.Group>
-            <Form.Group controlId='formEmail'>
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type='email'
-                placeholder="We'd love to reach out to you!"
-              />
-              <Form.Text className='text-muted'>
-                We won't share your email with anyone
-              </Form.Text>
-            </Form.Group>
 
-            <Form.Group controlId='formLocation'>
+            <Form.Group controlId='location'>
               <Form.Label>Location</Form.Label>
               <Form.Control
                 type='string'
                 placeholder='Where are you located?'
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </Form.Group>
-            <Form.Group controlId='formImage'>
-              <Form.Label>Upload a Selfie!</Form.Label>
-              <Form.Control type='file' label='Check me out' />
+            <Form.Group controlId='image'>
+              <Form.Label>Link a picture</Form.Label>
+              <Form.Control
+                type='string'
+                placeholder='picture link'
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId='text'>
+              <Form.Label>Your Message</Form.Label>
+              <Form.Control
+                as='textarea'
+                rows={3}
+                placeholder='We wish we could be with you in person'
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+              />
             </Form.Group>
             <Button variant='primary' type='submit'>
               Submit
@@ -65,4 +77,4 @@ const RsvpScreen = () => {
   );
 };
 
-export default RsvpScreen;
+export default GuestbookScreen;

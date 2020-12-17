@@ -4,7 +4,7 @@ import { Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
 
 const CommentScreen = ({ match }) => {
-  const [comment, setComment] = useState({});
+  const [comment, setComment] = useState({ user: {} });
 
   useEffect(() => {
     const fetchComment = async () => {
@@ -14,7 +14,6 @@ const CommentScreen = ({ match }) => {
     fetchComment();
   }, [match]);
 
-  // const comment = comments.find((c) => c._id === Number(match.params.id));
   return (
     <>
       <Row>
@@ -22,7 +21,7 @@ const CommentScreen = ({ match }) => {
           <Image src={comment.image} fluid></Image>
         </Col>
         <Col>
-          <h1>{comment.name}</h1>
+          <h1>{comment.user.name}</h1>
           <h6>{comment.location}</h6>
           <p>{comment.text}</p>
           <LinkContainer to={`/rsvp/`}>

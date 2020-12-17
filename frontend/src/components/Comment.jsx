@@ -12,7 +12,7 @@ const Comment = ({ comment }) => {
       <Card.Body>
         <Link to={`/comments/${comment._id}`}>
           <Card.Title as='div'>
-            <strong>{comment.name}</strong>
+            <strong>{comment.user.name}</strong>
           </Card.Title>
         </Link>
 

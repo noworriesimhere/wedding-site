@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import './css/App.css';
 import HomeScreen from './screens/HomeScreen';
-import RsvpScreen from './screens/RsvpScreen';
+import GuestbookScreen from './screens/GuestbookScreen';
 import ZoomScreen from './screens/ZoomScreen';
 import CommentScreen from './screens/CommentScreen';
 import OurstoryScreen from './screens/OurstoryScreen';
@@ -13,18 +13,18 @@ import OurstoryScreen from './screens/OurstoryScreen';
 function App() {
   return (
     <Router>
-      <main className='py-3'>
-        <Hero />
+      <Hero />
+      <div className='vh-100 d-flex flex-column justify-content-between'>
         <Header />
         <Container>
           <Route path='/our-story' component={OurstoryScreen} />
           <Route path='/watch-live' component={ZoomScreen} />
-          <Route path='/rsvp' component={RsvpScreen} />
+          <Route path='/guestbook' component={GuestbookScreen} />
           <Route path='/comments/:id' component={CommentScreen} />
           <Route path='/' component={HomeScreen} exact />
         </Container>
-      </main>
-      <Footer />
+        <Footer />
+      </div>
     </Router>
   );
 }
