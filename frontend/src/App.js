@@ -9,6 +9,7 @@ import GuestbookScreen from './screens/GuestbookScreen';
 import ZoomScreen from './screens/ZoomScreen';
 import CommentScreen from './screens/CommentScreen';
 import OurstoryScreen from './screens/OurstoryScreen';
+import RsvpScreen from './screens/RsvpScreen';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className='vh-100 d-flex flex-column justify-content-between'>
         <Header />
         <Container>
+          <Route path='/rsvp' component={RsvpScreen} />
           <Route path='/our-story' component={OurstoryScreen} />
           <Route path='/watch-live' component={ZoomScreen} />
           <Route path='/guestbook' component={GuestbookScreen} />
