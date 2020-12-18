@@ -24,7 +24,7 @@ const CommentScreen = ({ match }) => {
           <h1>{comment.user.name}</h1>
           <h6>{comment.location}</h6>
           <p>{comment.text}</p>
-          <LinkContainer to={`/rsvp/`}>
+          <LinkContainer to={`/guestbook`}>
             <a href>Go Back</a>
           </LinkContainer>
         </Col>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './hero.styes.scss';
 
 const Hero = () => {
   return (

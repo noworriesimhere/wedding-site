@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
-import './css/App.css';
-import HomeScreen from './screens/HomeScreen';
-import GuestbookScreen from './screens/GuestbookScreen';
-import ZoomScreen from './screens/ZoomScreen';
-import CommentScreen from './screens/CommentScreen';
-import OurstoryScreen from './screens/OurstoryScreen';
-import RsvpScreen from './screens/RsvpScreen';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import Hero from './components//hero/Hero';
+import './App.css';
+import HomeScreen from './screens/home/HomeScreen';
+import GuestbookScreen from './screens/guestbook/GuestbookScreen';
+import ZoomScreen from './screens/zoom/ZoomScreen';
+import CommentScreen from './screens/comment/CommentScreen';
+import OurstoryScreen from './screens/ourstory/OurstoryScreen';
+import RsvpScreen from './screens/rsvp/RsvpScreen';
 
 function App() {
   return (

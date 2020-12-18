@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import Comment from '../components/Comment';
+import Comment from '../../components/comment/Comment';
+import './guestbook.styles.scss';
 
 const GuestbookScreen = () => {
   const [comments, setComments] = useState([]);
@@ -24,7 +25,7 @@ const GuestbookScreen = () => {
   };
 
   return (
-    <Container className='pt-5 rsvp__container'>
+    <Container className='pt-5 guestbook__container'>
       <Row>
         <Col sm={12} md={4} className='pt-5'>
           <Form className='sticky-top' onSubmit={submitHandler}>
